@@ -1,10 +1,19 @@
 <?php
     require_once('database.php');
 
-    // Get customers for selected category
-    $query = "SELECT firstName, lastName FROM customers order by lastName";
-    // Results set
-    $customers = $conn->query($query);
+    
+    //Lab 7 Additions ----------------
+    //Set search term or hard-code the parameter value
+    $customerID = 1;
+    
+    $query = "SELECT orderID, orderDate FROM orders WHERE customerID = ?";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param('s', $customerID);
+    $stmt->execute();
+    
+    $stmt->store_result();
+    //store result fields in variables
+    $stmt->bind_result($orderID, $orderDate);
 ?>
 
 <!DOCTYPE html>
@@ -21,27 +30,29 @@
     <div id="page">
 
     <div id="header">
-        <h1>Customer Manager</h1>
+        <h1>Order Manager</h1>
     </div>
 
     <div id="main">
 
-        <h1>Customers</h1>
-
-
+        <h1>Orders</h1>
         <div id="content">
-            <!-- display a table of customers -->
+            <!-- display a table of orders -->
+            
             <table>
                 <tr>
-                    <th>First Name</th>
-                    <th>Last Name</th>
+                    <th>Order ID</th>
+                    <th>Order Date</th>
                 </tr>
-                <?php foreach ($customers as $customer) : ?>
+                <?php while ($stmt->fetch()) { ?>
                 <tr>
-                    <td><?php echo $customer['firstName']; ?></td>
-                    <td><?php echo $customer['lastName']; ?></td>
+                    <td><?php echo $orderID; ?></td>
+                    <td><?php echo $orderDate ?></td>
                 </tr>
-                <?php endforeach; ?>
+                <?php } 
+                
+    $stmt->free_result();
+    $conn->close();?>
             </table>
         </div>
     </div>
