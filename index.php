@@ -10,7 +10,7 @@
     //Set search term or hard-code the parameter value
     $state = "CA";
     
-    $query = "SELECT firstName, lastName, city FROM customers WHERE state = ?";
+    $query = "SELECT firstName, lastName, city FROM customers WHERE state = ? ORDER BY lastName";
     $stmt = $conn->prepare($query);
     $stmt->bind_param('s', $state);
     $stmt->execute();
