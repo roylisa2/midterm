@@ -1,8 +1,8 @@
 <?php
     $dsn = 'localhost';
-    $username = 'mgs_user';
+    $username = 'ts_user';
     $password = 'pa55word';
-    $dbname = 'shopDB';
+    $dbname = 'tech_support';
     
     // Create connection    
     $conn = new mysqli($dsn, $username, $password, $dbname);

@@ -2,18 +2,22 @@
     require_once('database.php');
 
     
-    //Lab 7 Additions ----------------
-    //Set search term or hard-code the parameter value
-    $customerID = 1;
+    //MidtermPractice Additions ----------------
+    // -Updated Database to tech_support
+    // -Updated user to ts_user
+    // -Updated query
     
-    $query = "SELECT orderID, orderDate FROM orders WHERE customerID = ?";
+    //Set search term or hard-code the parameter value
+    $state = "CA";
+    
+    $query = "SELECT firstName, lastName, city FROM customers WHERE state = ?";
     $stmt = $conn->prepare($query);
-    $stmt->bind_param('s', $customerID);
+    $stmt->bind_param('s', $state);
     $stmt->execute();
     
     $stmt->store_result();
     //store result fields in variables
-    $stmt->bind_result($orderID, $orderDate);
+    $stmt->bind_result($firstName, $lastName, $city);
 ?>
 
 <!DOCTYPE html>
@@ -30,24 +34,26 @@
     <div id="page">
 
     <div id="header">
-        <h1>Order Manager</h1>
+        <h1>Customer Manager</h1>
     </div>
 
     <div id="main">
 
-        <h1>Orders</h1>
+        <h1>Customers</h1>
         <div id="content">
             <!-- display a table of orders -->
             
             <table>
                 <tr>
-                    <th>Order ID</th>
-                    <th>Order Date</th>
+                    <th>Fist Name</th>
+                    <th>Last Name</th>
+                    <th>City</th>
                 </tr>
                 <?php while ($stmt->fetch()) { ?>
                 <tr>
-                    <td><?php echo $orderID; ?></td>
-                    <td><?php echo $orderDate ?></td>
+                    <td><?php echo $firstName; ?></td>
+                    <td><?php echo $lastName ?></td>
+                    <td><?php echo $city ?></td>
                 </tr>
                 <?php } 
                 
