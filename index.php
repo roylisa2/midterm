@@ -20,18 +20,8 @@
     $stmt->bind_result($firstName, $lastName, $city);
 ?>
 
-<!DOCTYPE html>
-<html>
-
-<!-- the head section -->
-<head>
-    <title>My Shop</title>
-    <link rel="stylesheet" type="text/css" href="main.css" />
-</head>
-
-<!-- the body section -->
-<body>
-    <div id="page">
+<!-- header information comes from include file -->
+    <p><?php include 'header.php'; ?></p>
 
     <div id="header">
         <h1>Customer Manager</h1>
@@ -63,10 +53,5 @@
         </div>
     </div>
 
-    <div id="footer">
-        <p>&copy; <?php echo date("Y"); ?> My Customers, Inc.</p>
-    </div>
-
-    </div><!-- end page -->
-</body>
-</html>
+ <!-- shared footer information comes from include file -->
+    <p><?php include 'footer.php'; ?></p>
