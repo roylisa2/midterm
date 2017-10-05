@@ -1,7 +1,7 @@
 /* the styles for the HTML elements */
 body {
     margin-top: 0;
-    background-color: rgb(128, 141, 159);
+    background-color: #61AE24;
     font-family: Arial, Helvetica, sans-serif;
 }
 h1 {
@@ -15,7 +15,7 @@ h2 {
     padding: .25em 0 .5em;
 }
 h1, h2 {
-    color: rgb(205, 163, 94);
+    color: #D70060;
 }
 
 ul {
@@ -47,11 +47,11 @@ a:hover {
 }
 
 table {
-    border: 1px solid black;
+    border: 1px solid #616161;
     border-collapse: collapse;
 }
 td, th {
-    border: 1px dashed black;
+    border: 1px dashed #616161;
     padding: .2em .5em .2em .5em;
     vertical-align: top;
     text-align: left;
@@ -67,12 +67,12 @@ br {
 #page {
     width: 760px;
     margin: 0 auto;
-    background-color: white;
-    border: 1px solid rgb(119, 75, 77);
+    background-color: #efefef;
+    border: 1px solid #32742C;
 }
 #header {
     margin: 0;
-    border-bottom: 2px solid rgb(119, 75, 77);
+    border-bottom: 2px solid #D0D102;
     padding: .5em 2em;
 }
 #header h1 {
@@ -108,7 +108,7 @@ br {
     clear: both;
     margin-top: 1em;
     padding-right: 1em;
-    border-top: 2px solid rgb(119, 75, 77);
+    border-top: 2px solid #00A1CB;
 }
 #footer p {
     text-align: right;

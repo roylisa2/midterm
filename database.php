@@ -1,6 +1,5 @@
 <?php
     //Midterm ----------------
-    // Fresh Start
 
     $dsn = 'localhost';
     $username = 'ts_user';

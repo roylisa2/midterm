@@ -3,7 +3,7 @@
 
 <!-- the head section -->
 <head>
-    <title>My Shop</title>
+    <title>Midterm</title>
     <link rel="stylesheet" type="text/css" href="main.css" />
 </head>
 

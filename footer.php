@@ -1,5 +1,5 @@
     <div id="footer">
-        <p>&copy; <?php echo date("Y"); ?> My Miderterm Practice, Inc.</p>
+        <p>&copy; <?php echo date("Y"); ?> Lisa Ann Roy's Miderterm, Lulz Inc.</p>
     </div>
 
     </div><!-- end page -->
