@@ -2,10 +2,8 @@
     require_once('database.php');
 
     
-    //MidtermPractice Additions ----------------
-    // -Updated Database to tech_support
-    // -Updated user to ts_user
-    // -Updated query
+    //Midterm ----------------
+    // Fresh Start
     
     //Set search term or hard-code the parameter value
     $state = "CA";
